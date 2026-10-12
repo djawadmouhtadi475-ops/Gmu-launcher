@@ -33,8 +33,11 @@
     <Using Include="CommunityToolkit.Mvvm.ComponentModel" />
     <Using Include="CommunityToolkit.Mvvm.Input" />
     <Using Include="System.Collections.ObjectModel" />
+    <Using Include="System.IO" />
+    <Using Include="System.Net.Http" />
     <Using Include="GmuLauncher.Models" />
     <Using Include="GmuLauncher.Services" />
+    <Using Include="GmuLauncher.ViewModels" />
   </ItemGroup>
 
 </Project>

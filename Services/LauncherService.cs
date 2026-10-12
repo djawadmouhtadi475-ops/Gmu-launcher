@@ -83,7 +83,7 @@ public class LauncherService
             progress.Report(($"{e.Name} ({e.ProgressedTasks}/{e.TotalTasks})", pct));
         });
 
-        var proc = await launcher.InstallAndBuildProcessAsync(inst.LaunchVersion, opt, fileProgress: fileProgress, cancellationToken: ct);
+        null var proc = await launcher.InstallAndBuildProcessAsync(inst.LaunchVersion, opt, fileProgress: fileProgress, cancellationToken: ct);
         proc.StartInfo.UseShellExecute = false;
         proc.StartInfo.RedirectStandardOutput = true;
         proc.StartInfo.RedirectStandardError = true;

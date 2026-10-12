@@ -1,0 +1,25 @@
+<Application x:Class="GmuLauncher.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:GmuLauncher.ViewModels"
+             xmlns:v="clr-namespace:GmuLauncher.Views">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- العنصر رقم 0 هو قاموس اللغة ويُستبدل وقت التشغيل -->
+                <ResourceDictionary Source="Resources/Strings.ar.xaml"/>
+                <ResourceDictionary Source="Themes/Dark.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <BooleanToVisibilityConverter x:Key="B2V"/>
+
+            <!-- ربط كل ViewModel بالواجهة الخاصة به -->
+            <DataTemplate DataType="{x:Type vm:HomeViewModel}"><v:HomeView/></DataTemplate>
+            <DataTemplate DataType="{x:Type vm:InstancesViewModel}"><v:InstancesView/></DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ModsViewModel}"><v:ModsView/></DataTemplate>
+            <DataTemplate DataType="{x:Type vm:PacksViewModel}"><v:PacksView/></DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SkinsViewModel}"><v:SkinsView/></DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SettingsViewModel}"><v:SettingsView/></DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

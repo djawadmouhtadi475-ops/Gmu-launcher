@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>GmuLauncher</AssemblyName>
+    <RootNamespace>GmuLauncher</RootNamespace>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Authors>Gmu Studios</Authors>
+    <Company>Gmu Studios</Company>
+    <Product>Gmu Launcher</Product>
+    <Copyright>© 2026 Gmu Studios. All Rights Reserved.</Copyright>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
+    <PackageReference Include="CmlLib.Core" Version="4.*" />
+    <PackageReference Include="CmlLib.Core.Auth.Microsoft" Version="3.*" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="CommunityToolkit.Mvvm.ComponentModel" />
+    <Using Include="CommunityToolkit.Mvvm.Input" />
+    <Using Include="System.Collections.ObjectModel" />
+    <Using Include="GmuLauncher.Models" />
+    <Using Include="GmuLauncher.Services" />
+  </ItemGroup>
+
+</Project>

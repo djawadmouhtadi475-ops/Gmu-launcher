@@ -1,0 +1,60 @@
+<UserControl x:Class="GmuLauncher.Views.SettingsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="{DynamicResource Nav_Settings}" Style="{StaticResource H1}"/>
+
+            <Border Style="{StaticResource Card}" Margin="0,16,0,10">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Ram}" FontWeight="SemiBold"/>
+                    <DockPanel Margin="0,8,0,0">
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding RamGb, StringFormat='{}{0:0} GB'}" Width="60" TextAlignment="Right" Foreground="{StaticResource AccentBrush}" FontWeight="Bold"/>
+                        <Slider Minimum="1" Maximum="32" TickFrequency="1" IsSnapToTickEnabled="True" Value="{Binding RamGb}"/>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource Card}" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Java}" FontWeight="SemiBold"/>
+                    <CheckBox Content="{DynamicResource Set_JavaAuto}" IsChecked="{Binding JavaAuto}" Margin="0,8"/>
+                    <DockPanel IsEnabled="{Binding JavaManual}">
+                        <Button DockPanel.Dock="Right" Content="{DynamicResource Set_Browse}" Command="{Binding BrowseJavaCommand}" Margin="8,0,0,0"/>
+                        <TextBox Text="{Binding JavaPath}" ToolTip="{DynamicResource Set_JavaPath}" FlowDirection="LeftToRight"/>
+                    </DockPanel>
+                    <TextBlock Text="{DynamicResource Set_Jvm}" Style="{StaticResource Muted}" Margin="0,12,0,4"/>
+                    <TextBox Text="{Binding JvmArgs}" FlowDirection="LeftToRight" ToolTip="-XX:+UseG1GC -XX:MaxGCPauseMillis=50"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource Card}" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Res}" FontWeight="SemiBold"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0" FlowDirection="LeftToRight">
+                        <TextBox Text="{Binding ResW}" Width="90"/><TextBlock Text="  ×  " VerticalAlignment="Center"/><TextBox Text="{Binding ResH}" Width="90"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource Card}" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Keys}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{DynamicResource Set_CfKey}" Style="{StaticResource Muted}" Margin="0,8,0,4"/>
+                    <TextBox Text="{Binding CurseKey}" FlowDirection="LeftToRight"/>
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource Card}" Margin="0,0,0,10">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Lang}" FontWeight="SemiBold"/>
+                    <ComboBox ItemsSource="{Binding Languages}" SelectedValue="{Binding Lang}" SelectedValuePath="Code" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource PrimaryButton}" Content="{DynamicResource Set_Save}" Command="{Binding SaveCommand}" Padding="28,10"/>
+                <Button Content="{DynamicResource Set_About}" Command="{Binding ShowAboutCommand}" Margin="10,0,0,0"/>
+                <TextBlock Text="{Binding Status}" VerticalAlignment="Center" Margin="14,0" Foreground="{StaticResource AccentBrush}"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,3 +1,4 @@
+using System.IO;
 namespace GmuLauncher.Services;
 
 public static class Paths
